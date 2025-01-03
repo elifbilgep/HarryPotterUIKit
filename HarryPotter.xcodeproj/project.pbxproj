@@ -19,6 +19,7 @@
 /* Begin PBXFileReference section */
 		6ADC53A62D209433007BBAC0 /* HarryPotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3C5702D2858EA008D2CA4 /* HarryPotterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarryPotterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF3C58A2D28A727008D2CA4 /* simulator_screenshot_8610B4A9-4A4F-4FC7-B333-8630174F1ED9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "simulator_screenshot_8610B4A9-4A4F-4FC7-B333-8630174F1ED9.png"; path = "../../../../var/folders/4k/tgy00z9961s4ym3fpvzy58140000gn/T/simulator_screenshot_8610B4A9-4A4F-4FC7-B333-8630174F1ED9.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -70,6 +71,7 @@
 			children = (
 				6ADC53A82D209433007BBAC0 /* HarryPotter */,
 				6AF3C5712D2858EA008D2CA4 /* HarryPotterTests */,
+				6AF3C5892D28A727008D2CA4 /* Frameworks */,
 				6ADC53A72D209433007BBAC0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +83,14 @@
 				6AF3C5702D2858EA008D2CA4 /* HarryPotterTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6AF3C5892D28A727008D2CA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3C58A2D28A727008D2CA4 /* simulator_screenshot_8610B4A9-4A4F-4FC7-B333-8630174F1ED9.png */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

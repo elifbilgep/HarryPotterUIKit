@@ -62,6 +62,9 @@ final class HomeViewController: UIViewController {
     
     //MARK: Setup
     private func setupController() {
+        title = "Harry Potter API"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         homeView.collectionView.delegate = self
         homeView.collectionView.dataSource = self
     }
