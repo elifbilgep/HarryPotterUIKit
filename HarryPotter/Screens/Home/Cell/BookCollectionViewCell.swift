@@ -12,7 +12,7 @@ final class BookCollectionViewCell: UICollectionViewCell {
     private let containerStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 4
+        stack.spacing = 8
         stack.alignment = .center
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -20,9 +20,9 @@ final class BookCollectionViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.layer.cornerRadius = 8
+        iv.layer.cornerRadius = 16
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -54,9 +54,6 @@ final class BookCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupCell() {
-        contentView.backgroundColor = .secondarySystemBackground
-        contentView.layer.cornerRadius = 12
-        
         contentView.addSubview(containerStackView)
         [imageView, titleLabel, authorLabel].forEach { containerStackView.addArrangedSubview($0) }
         setupConstraints()
@@ -69,8 +66,8 @@ final class BookCollectionViewCell: UICollectionViewCell {
             containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             containerStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 150)
+            imageView.widthAnchor.constraint(equalToConstant: 140),
+            imageView.widthAnchor.constraint(equalToConstant: 200),
         ])
     }
     

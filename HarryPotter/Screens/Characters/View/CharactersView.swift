@@ -8,22 +8,16 @@
 import UIKit
 
 class CharactersView: UIView {
+    
+    //MARK: Properties
     lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 16
-        layout.minimumInteritemSpacing = 16
-        let padding: CGFloat = 16
-        let itemWidth = (UIScreen.main.bounds.width - (padding * 3)) / 2
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.4)
-        layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -33,6 +27,7 @@ class CharactersView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Private Methods
     private func setupView() {
         backgroundColor = .systemBackground
         addSubview(collectionView)
@@ -44,5 +39,17 @@ class CharactersView: UIView {
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
+    }
+    
+    private func createLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        let padding: CGFloat = 16
+        let itemWidth = (UIScreen.main.bounds.width - (padding * 3)) / 2
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.6)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: padding, bottom: padding, right: padding)
+        return layout
     }
 }

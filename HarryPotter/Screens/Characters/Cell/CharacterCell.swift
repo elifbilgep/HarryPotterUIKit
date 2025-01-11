@@ -18,19 +18,19 @@ class CharacterCell: UICollectionViewCell {
     
     // MARK: - UI Components
     private lazy var containerView: UIView = {
-         let view = UIView()
-         view.translatesAutoresizingMaskIntoConstraints = false
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .tertiarySystemBackground
-         view.layer.cornerRadius = 12
-         return view
-     }()
+        view.layer.cornerRadius = 12
+        return view
+    }()
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.distribution = .fill
-        stackView.spacing = 8
+        stackView.spacing = 4
+        stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -88,26 +88,26 @@ class CharacterCell: UICollectionViewCell {
         stackView.addArrangedSubview(houseLabel)
         
         NSLayoutConstraint.activate([
-                // Container view constraints
-                containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-                containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-                containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-                
-                // Stack view constraints
-                stackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
-                stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
-                stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
-                stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
-                
-                // Character image view aspect ratio
-                characterImageView.heightAnchor.constraint(equalTo: characterImageView.widthAnchor, multiplier: 1),
-                
-                // favorite button
-                favoriteButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
-                  favoriteButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
-                  favoriteButton.widthAnchor.constraint(equalToConstant: 24),
-                  favoriteButton.heightAnchor.constraint(equalToConstant: 24)
+            // Container view constraints
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            
+            // Stack view constraints
+            stackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
+            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
+            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
+            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
+            
+            // Character image view aspect ratio
+            characterImageView.heightAnchor.constraint(equalTo: characterImageView.widthAnchor, multiplier: 1.3),
+            
+            // favorite button
+            favoriteButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
+            favoriteButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 24),
+            favoriteButton.heightAnchor.constraint(equalToConstant: 24),
             ])
     }
     

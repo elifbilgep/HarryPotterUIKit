@@ -27,48 +27,24 @@ final class HomeView: UIView {
         return collectionView
     }()
     
-    //MARK: Private Properties
-    private lazy var headerImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.backgroundColor = .clear
-        imageView.layer.cornerRadius = 20
-        return imageView
-    }()
-    
+
     //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        updateHeaderImage()
-        registerForThemeColorChanges()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func updateHeaderImage() {
-        if traitCollection.userInterfaceStyle == .dark {
-            headerImageView.image = UIImage(named: "hogwarts_header_dark")
-        } else {
-            headerImageView.image = UIImage(named: "hogwarts_header_light")
-        }
-    }
-    
-    private func registerForThemeColorChanges() {
-        registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, _) in
-            self.updateHeaderImage()
-        }
-    }
+
     
     //MARK: Setup
     private func setupViews() {
         backgroundColor = .systemBackground
-        addSubview(headerImageView)
         addSubview(collectionView)
         setupConstraints()
+
     }
     
     //MARK: Setup Constraints
@@ -160,20 +136,20 @@ final class HomeView: UIView {
     
     private func createBooksSection() -> NSCollectionLayoutSection {
         // Item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(120),
-                                              heightDimension: .absolute(240))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(140),
+                                              heightDimension: .absolute(280))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(120),
-                                               heightDimension: .absolute(240))
+                                               heightDimension: .absolute(280))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         // Section
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 20,
+            top: 0,
             leading: 16,
             bottom: 20,
             trailing: 16
